@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ADD_SEAT } from "./redux/constant";
+import { ADD_SEAT, TOGGLE_SEAT } from "./redux/constant";
 import "./css/index.css";
 
 class Item extends Component {
   render() {
     let { hang, danhSachGhe } = this.props.data;
-    console.log(this.props.data);
+    let { isBooked } = this.props;
     return (
       <div>
         <div className="seat">
@@ -17,6 +17,7 @@ class Item extends Component {
                 <button
                   onClick={() => {
                     this.props.handleAddSeat(item);
+                    this.props.handleToggleSeat(item);
                   }}
                   key={item}
                   className={item.daDat ? "ghe daDat" : "seat-label"}
@@ -37,6 +38,11 @@ class Item extends Component {
     );
   }
 }
+let mapStateToProps = (state) => {
+  return {
+    isBooked: state.isBooked,
+  };
+};
 let mapDispatchToProps = (dispatch) => {
   return {
     handleAddSeat: (item) => {
@@ -46,6 +52,13 @@ let mapDispatchToProps = (dispatch) => {
       };
       dispatch(action);
     },
+    handleToggleSeat: (item) => {
+      let action = {
+        type: TOGGLE_SEAT,
+        payload: item,
+      };
+      dispatch(action);
+    },
   };
 };
-export default connect(null, mapDispatchToProps)(Item);
+export default connect(mapStateToProps, mapDispatchToProps)(Item);
