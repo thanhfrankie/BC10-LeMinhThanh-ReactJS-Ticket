@@ -1,0 +1,137 @@
+.seat-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1px;
+}
+.seat {
+  background-color: rgba(
+    126,
+    114,
+    114,
+    0.5
+  ); /* Sử dụng màu với độ trong suốt thấp hơn */
+  padding: 10px;
+  align-items: center;
+  opacity: 0.9; /* Điều chỉnh độ mờ của ghế */
+}
+.ghe {
+  border: 3px solid orange;
+  width: 45px;
+  height: 35px;
+  font-size: 12px;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
+.daDat {
+  border: 3px solid orange;
+  background: orange;
+  color: #000;
+  cursor: no-drop !important;
+  border-radius: 5px;
+  width: 45px;
+  height: 35px;
+}
+
+.seat-label {
+  border: 3px solid orange;
+  width: 45px;
+  height: 35px;
+  font-size: 12px;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
+/* Để các lớp CSS khác nhau tương ứng với các trạng thái của ghế */
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Tạo kiểu cho khu vực checkbox */
+.checkbox-custom {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* Thiết kế icon khi checkbox được chọn */
+.checkbox-custom::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  border: solid #008000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  top: 3px;
+  left: 6px;
+  display: none;
+}
+
+input[type="checkbox"]:checked + .checkbox-custom::after {
+  display: block;
+}
+.seat-label:active {
+  background-color: green;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.table-header {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  min-width: 150px; /* Điều chỉnh kích thước tối thiểu của các cột */
+}
+
+.table-header th {
+  padding: 10px;
+}
+
+.table-header th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.table-header th:last-child {
+  border-top-right-radius: 5px;
+}
+
+.tbody tr:nth-child(even) {
+  background-color: #555;
+}
+
+.tbody tr:nth-child(odd) {
+  background-color: #444;
+}
+
+.tbody td {
+  padding: 10px;
+}
+
+.tbody td:last-child {
+  text-align: center;
+}
+.List {
+  font-size: 40px;
+  font-weight: 700;
+}
+.td {
+  color: red;
+}
+.list {
+  border: 1px solid blue;
+  width: 100%;
+}

@@ -1,11 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Seat from './Ticket/Seat';
+import logo from "./logo.svg";
+import "./App.css";
+import Seat from "./Ticket/Seat";
 
 function App() {
   return (
-    <div className="App">
-     <Seat/>
+    <div
+      style={{
+        backgroundImage: `url(https://wallpapercave.com/wp/EcNfOSK.jpg)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        height: "100vh",
+        color: "white",
+        filter: "grayscale(0.2)",
+        fontSize: "20px",
+      }}
+      className="App"
+    >
+      <Seat />
     </div>
   );
 }
