@@ -22,7 +22,7 @@ export default class BookingTicket extends Component {
           position: "fixed",
           width: "100%",
           height: "100%",
-          backgroundImage: "url('./img/BookingTicket/bgmovie.jpg')",
+          backgroundImage: "url(https://wallpapercave.com/wp/EcNfOSK.jpg)",
           backgroundSize: "100%",
         }}
       >
